@@ -9,23 +9,12 @@ table, th, td {
 }
 
 .top {
-  background-color: #666;
+  background-color: #000;
   color: #fff;
 }
 
 td {
   padding: 0.5em;
-}
-
-ul  {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  padding: 2px 0;
-  line-height: 10%;
 }
 
 a:link {

@@ -7,7 +7,7 @@
   </tr>
   <% @actor.each do |title| %>
     <tr>
-      <td><%= title["title"] %></td>
+      <td><a href="/movies/<%= title["id"] %>"><%= title["title"] %></a></td>
       <td><%= title["character"] %></td>
     </tr>
   <% end %>

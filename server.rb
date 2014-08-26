@@ -62,7 +62,7 @@ get '/actors/:id' do
   name = "SELECT name, id FROM actors WHERE actors.id = #{id}"
 
   query = "
-  SELECT movies.title, cast_members.character
+  SELECT movies.title, cast_members.character, movies.id
   FROM movies
   JOIN cast_members ON movies.id = cast_members.movie_id
   WHERE cast_members.actor_id = #{id}"
