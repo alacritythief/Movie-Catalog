@@ -1,0 +1,16 @@
+<h2 id="title"><%= @name[0]["name"] %></h2>
+<p>Starred in:</p>
+<table>
+  <tr class="top">
+    <td>Movie</td>
+    <td>Character</td>
+  </tr>
+  <% @actor.each do |title| %>
+    <tr>
+      <td><%= title["title"] %></td>
+      <td><%= title["character"] %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><a href="/movies"><< Back to Movies</a></p>

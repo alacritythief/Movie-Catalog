@@ -23,7 +23,7 @@
   </tr>
 <% @movie_id.each do |movie| %>
     <tr>
-      <td><%= movie["actor"] %></td>
+      <td><a href="/actors/<%= movie["actors_id"] %>"><%= movie["actor"] %></a></td>
       <td><%= movie["character"] %></td>
     </tr>
 <% end %>
