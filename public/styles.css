@@ -1,0 +1,53 @@
+body {
+  font-family: helvetica;
+  font-size: 1.5em;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.top {
+  background-color: #666;
+  color: #fff;
+}
+
+td {
+  padding: 0.5em;
+}
+
+ul  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  padding: 2px 0;
+  line-height: 10%;
+}
+
+a:link {
+    color: #ff55cc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ff55cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff55cc;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ff55cc;
+    text-decoration: underline;
+}
+
+#title a {
+  color: #000;
+}
