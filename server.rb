@@ -1,6 +1,7 @@
 require 'pg'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pry'
 
 def db_connect
   begin
@@ -24,15 +25,20 @@ get '/' do
 end
 
 get '/movies' do
+
+  order = params[:order] || "title"
+
   query =
   "SELECT title, year, rating, genres.name AS genre, studios.name AS studio, movies.id AS id
   FROM movies JOIN genres ON movies.genre_id = genres.id
-  LEFT OUTER JOIN studios ON studios.id = movies.studio_id ORDER BY title"
+  LEFT OUTER JOIN studios ON studios.id = movies.studio_id ORDER BY #{order}"
 
   @movies = fetch_data(query)
 
   erb  :'movies/index'
+
 end
+
 
 get '/movies/:id' do
   id = params[:id]

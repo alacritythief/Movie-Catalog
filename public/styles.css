@@ -13,6 +13,14 @@ table, th, td {
   color: #fff;
 }
 
+table .top td a {
+  color: #fff;
+}
+
+table .top td a:hover {
+  text-decoration: underline;
+}
+
 td {
   padding: 0.5em;
 }
