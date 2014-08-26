@@ -1,5 +1,6 @@
 require 'pg'
 require 'sinatra'
+require 'sinatra/reloader'
 
 def db_connect
   begin
@@ -26,7 +27,7 @@ get '/movies' do
   query =
   "SELECT title, year, rating, genres.name AS genre, studios.name AS studio, movies.id AS id
   FROM movies JOIN genres ON movies.genre_id = genres.id
-  JOIN studios ON studios.id = movies.studio_id ORDER BY title"
+  LEFT OUTER JOIN studios ON studios.id = movies.studio_id ORDER BY title"
 
   @movies = fetch_data(query)
 
@@ -42,9 +43,9 @@ get '/movies/:id' do
       cast_members.character, actors.id AS actors_id
     FROM movies
     JOIN genres ON movies.genre_id = genres.id
-    JOIN studios ON movies.studio_id = studios.id
-    JOIN cast_members ON movies.id = cast_members.movie_id
-    JOIN actors ON cast_members.actor_id = actors.id
+    LEFT OUTER JOIN studios ON movies.studio_id = studios.id
+    LEFT OUTER JOIN cast_members ON movies.id = cast_members.movie_id
+    LEFT OUTER JOIN actors ON cast_members.actor_id = actors.id
     WHERE movies.id = #{id} ORDER BY actors.name"
 
   @movie_id = fetch_data(query)
