@@ -1,0 +1,32 @@
+<h2 id="title"><%= @movie_id[0]["title"] %></h2>
+<table>
+  <tr class="top">
+    <td>Year</td>
+    <td>Rating</td>
+    <td>Genre</td>
+    <td>Studio</td>
+  </tr>
+    <tr>
+      <td><%= @movie_id[0]["year"] %></td>
+      <td><%= @movie_id[0]["rating"] %></td>
+      <td><%= @movie_id[0]["genre"] %></td>
+      <td><%= @movie_id[0]["studio"] %></td>
+    </tr>
+</table>
+
+<h2 id="title">Actors:</h2>
+
+<table>
+  <tr class="top">
+    <td>Actor</td>
+    <td>Character</td>
+  </tr>
+<% @movie_id.each do |movie| %>
+    <tr>
+      <td><%= movie["actor"] %></td>
+      <td><%= movie["character"] %></td>
+    </tr>
+<% end %>
+</table>
+
+<p><a href="/movies"><< Back to Movies</a></p>
